@@ -7,6 +7,8 @@ const {
   GraphQLSchema,
 } = graphql
 
+const graphQLSchema = i => new GraphQLSchema(i)
+
 const users = [
   { id: 23, firstName: 'Bill', age: 20 },
   { id: 47, firstName: 'Samantha', age: 21 }
@@ -35,6 +37,6 @@ const RootQuery = new GraphQLObjectType({
   }
 })
 
-module.exports = new GraphQLSchema({
+module.exports = graphQLSchema({
   query: RootQuery
 })
